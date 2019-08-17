@@ -6,15 +6,21 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import numpy as np
 import urllib
+from django.conf import settings
 import json
 import cv2
 import os
+
+
+from omr_api import image_reg, template
+
 
 
 def _grab_image(path=None, stream=None, url=None):
     # if the path is not None, then load the image from disk
     if path is not None:
         image = cv2.imread(path)
+
 
     # otherwise, the image does not reside on disk
     else:
@@ -32,7 +38,9 @@ def _grab_image(path=None, stream=None, url=None):
         image = np.asarray(bytearray(data), dtype="uint8")
         image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
+
     # return the image
+
     return image
 
 
@@ -307,6 +315,7 @@ def ccode(orginal):
 def category(orginal):
 
 	c = ["GEN", "OBC1", "OBC2", "SC", "ST", "PH"]
+
 	h, w = orginal.shape
 	crop = orginal[140:h - 5, 140:w - 5]
 	h1, w1 = crop.shape
@@ -358,19 +367,35 @@ def detect(request):
 
 		# convert the image to grayscale, load the face cascade detector,
 		# and detect faces in the image
-		image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+		# image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+		frame_image = cv2.imread(settings.FRAME_URL)
+		category_image = cv2.imread(settings.CAT_URL)
+
+
+
+		input_img = image_reg.alignImages(image, frame_image)
+		detect = template.match(input_img, category_image)
+		result = image_reg.alignImages(detect, category_image)
+		result = cv2.resize(detect, (category_image.shape[1], category_image.shape[0]))
+
+
+
+
+		result = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
+
 		# name = name_(image)
 		# ques = questions(image)
 		# mobi = mobile(image)
-		code = ccode(image)
-		# cate_ = category(image)
+		# code = ccode(image)
+		cate_ = category(result)
 		# rollno = roll_no(image)
 
 
 
 
 		# update the data dictionary with the faces detected
-		data.update({"name":code, "success": True})
+		data.update({"name":cate_, "success": True})
 
 	# return a JSON response
 	return JsonResponse(data)

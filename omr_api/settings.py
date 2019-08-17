@@ -11,9 +11,23 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import cv2
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+FRAME_URL = os.path.join(BASE_DIR,"2.png")
+CAT_URL = os.path.join(BASE_DIR,"Category.png")
+
+
+# TRAIN_IM=cv2.imread(TRAIN_URL)
+#
+#
+#
+# category_image=cv2.imread(BASE_DIR+"Category.png")
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -120,3 +134,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
