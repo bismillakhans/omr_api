@@ -19,6 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 FRAME_URL = os.path.join(BASE_DIR,"2.png")
 CAT_URL = os.path.join(BASE_DIR,"Category.png")
+NAME_URL = os.path.join(BASE_DIR,"Name.png")
+CC_URL = os.path.join(BASE_DIR,"cc.png")
+QUES_URL = os.path.join(BASE_DIR,"ques.png")
+RN_URL = os.path.join(BASE_DIR,"rn.png")
+MN_URL = os.path.join(BASE_DIR,"mn.png")
 
 
 # TRAIN_IM=cv2.imread(TRAIN_URL)

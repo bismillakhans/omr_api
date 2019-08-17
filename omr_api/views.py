@@ -371,31 +371,71 @@ def detect(request):
 
 		frame_image = cv2.imread(settings.FRAME_URL)
 		category_image = cv2.imread(settings.CAT_URL)
-
-
-
+		name_image = cv2.imread(settings.NAME_URL)
+		cc_image = cv2.imread(settings.CC_URL)
+		rn_image = cv2.imread(settings.RN_URL)
+		mn_image = cv2.imread(settings.MN_URL)
+		ques_image = cv2.imread(settings.QUES_URL)
 		input_img = image_reg.alignImages(image, frame_image)
+
+
+
+
+		#detect category
 		detect = template.match(input_img, category_image)
-		result = image_reg.alignImages(detect, category_image)
-		result = cv2.resize(detect, (category_image.shape[1], category_image.shape[0]))
+		category_result = image_reg.alignImages(detect, category_image)
+		category_result = cv2.resize(detect, (category_image.shape[1], category_image.shape[0]))
+		category_result = cv2.cvtColor(category_result, cv2.COLOR_BGR2GRAY)
+
+		#detect name
+		detect = template.match(input_img, name_image)
+		name_result = image_reg.alignImages(detect, name_image)
+		name_result = cv2.resize(detect, (name_image.shape[1], name_image.shape[0]))
+		name_result = cv2.cvtColor(name_result, cv2.COLOR_BGR2GRAY)
+
+		#detect centercode
+		detect = template.match(input_img, cc_image)
+		cc_result = image_reg.alignImages(detect, cc_image)
+		cc_result = cv2.resize(detect, (cc_image.shape[1], cc_image.shape[0]))
+		cc_result = cv2.cvtColor(cc_result, cv2.COLOR_BGR2GRAY)
+
+		#detect rollnumber
+		detect = template.match(input_img, rn_image)
+		rn_result = image_reg.alignImages(detect, rn_image)
+		rn_result = cv2.resize(detect, (rn_image.shape[1], rn_image.shape[0]))
+		rn_result = cv2.cvtColor(rn_result, cv2.COLOR_BGR2GRAY)
+
+
+		#detect mobilenumber
+		detect = template.match(input_img, mn_image)
+		mn_result = image_reg.alignImages(detect, mn_image)
+		mn_result = cv2.resize(detect, (mn_image.shape[1], mn_image.shape[0]))
+		mn_result = cv2.cvtColor(mn_result, cv2.COLOR_BGR2GRAY)
+
+
+
+		#detect question
+		# detect = template.match(input_img, ques_image)
+		# ques_result = image_reg.alignImages(detect, ques_image)
+		# ques_result = cv2.resize(detect, (ques_image.shape[1], ques_image.shape[0]))
+		# ques_result = cv2.cvtColor(ques_result, cv2.COLOR_BGR2GRAY)
 
 
 
 
-		result = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
 
-		# name = name_(image)
-		# ques = questions(image)
-		# mobi = mobile(image)
-		# code = ccode(image)
-		cate_ = category(result)
-		# rollno = roll_no(image)
+		name = name_(name_result)
+		# ques = questions(ques_result)
+		mobi = mobile(mn_result)
+		code_ = ccode(cc_result)
+		cate_ = category(category_result)
+		rollno_ = roll_no(rn_result)
 
 
 
 
 		# update the data dictionary with the faces detected
-		data.update({"name":cate_, "success": True})
+		data.update({"category":cate_,"name":name,"rollnumber":rollno_,"center code":code_,"mobile number":mobi,"answers":'ques', "success": True})
 
 	# return a JSON response
 	return JsonResponse(data)

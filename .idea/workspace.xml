@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b1058d0-724b-476c-a95d-500f001fd247" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Category.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omr_api/image_reg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omr_api/template.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omr_api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/omr_api/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omr_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/omr_api/views.py" afterDir="false" />
     </list>
@@ -59,9 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omr_api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="384" column="14" selection-start-line="384" selection-start-column="14" selection-end-line="384" selection-end-column="14" />
-              <caret line="384" column="36" selection-start-line="384" selection-start-column="36" selection-end-line="384" selection-end-column="36" />
+            <state relative-caret-position="96">
+              <caret line="437" column="120" selection-start-line="437" selection-start-column="120" selection-end-line="437" selection-end-column="120" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -93,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omr_api/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            <state relative-caret-position="389">
+              <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
               <folding>
                 <element signature="e#308#317#0" expanded="true" />
               </folding>
@@ -383,12 +377,12 @@
       <workItem from="1565596650454" duration="3303000" />
       <workItem from="1565904686934" duration="973000" />
       <workItem from="1566026276017" duration="1436000" />
-      <workItem from="1566027848935" duration="7582000" />
+      <workItem from="1566027848935" duration="11047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35028000" />
+    <option name="totallyTimeSpent" value="38493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -399,7 +393,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43471074" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43471074" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -562,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omr_api/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        <state relative-caret-position="389">
+          <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
           <folding>
             <element signature="e#308#317#0" expanded="true" />
           </folding>
@@ -572,9 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omr_api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="384" column="14" selection-start-line="384" selection-start-column="14" selection-end-line="384" selection-end-column="14" />
-          <caret line="384" column="36" selection-start-line="384" selection-start-column="36" selection-end-line="384" selection-end-column="36" />
+        <state relative-caret-position="96">
+          <caret line="437" column="120" selection-start-line="437" selection-start-column="120" selection-end-line="437" selection-end-column="120" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
